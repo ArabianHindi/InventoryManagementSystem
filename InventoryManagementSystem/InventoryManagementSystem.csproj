@@ -147,6 +147,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250529160844_InitialCreate.cs" />
+    <Compile Include="Migrations\20250529160844_InitialCreate.Designer.cs">
+      <DependentUpon>20250529160844_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\WarehouseDbContextModelSnapshot.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DisbursementOrder.cs" />
     <Compile Include="Models\DisbursementOrderItem.cs" />
