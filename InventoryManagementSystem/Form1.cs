@@ -28,5 +28,15 @@ namespace InventoryManagementSystem
 
             }
         }
+
+        private void itemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemsForm itemsForm = new ItemsForm();
+            DialogResult result = itemsForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }
+        }
     }
 }
