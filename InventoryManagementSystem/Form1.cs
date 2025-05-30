@@ -25,7 +25,6 @@ namespace InventoryManagementSystem
 
             if (result == DialogResult.OK)
             {
-
             }
         }
 
