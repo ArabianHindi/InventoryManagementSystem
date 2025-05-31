@@ -56,15 +56,16 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 24);
             this.comboBox1.TabIndex = 35;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(462, 10);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 16);
+            this.label8.Size = new System.Drawing.Size(98, 16);
             this.label8.TabIndex = 34;
-            this.label8.Text = "Supplier Form";
+            this.label8.Text = "Customer Form";
             // 
             // button2
             // 
@@ -72,8 +73,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 33;
-            this.button2.Text = "button2";
+            this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -81,8 +83,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 32;
-            this.button1.Text = "button1";
+            this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -141,63 +144,63 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(16, 282);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 16);
+            this.label7.Size = new System.Drawing.Size(167, 16);
             this.label7.TabIndex = 24;
-            this.label7.Text = "Select Supplier to Update";
+            this.label7.Text = "Select Customer to Update";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(16, 238);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 16);
+            this.label6.Size = new System.Drawing.Size(117, 16);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Supplier Website";
+            this.label6.Text = "Customer Website";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(16, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 16);
+            this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 22;
-            this.label5.Text = "Supplier Email";
+            this.label5.Text = "Customer Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(16, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.Size = new System.Drawing.Size(108, 16);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Supplier Mobile";
+            this.label4.Text = "Customer Mobile";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Supplier Fax";
+            this.label3.Text = "Customer Fax";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.Size = new System.Drawing.Size(106, 16);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Supplier Phone";
+            this.label2.Text = "Customer Phone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Supplier Name";
+            this.label1.Text = "Customer Name";
             // 
             // CustomerForm
             // 
@@ -224,6 +227,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

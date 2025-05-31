@@ -94,9 +94,9 @@ namespace InventoryManagementSystem.Forms
                 dbcontext.SaveChanges();
 
                 MessageBox.Show("Supplier added successfully.");
-                ClearFields();
                 LoadSuppliersIntoComboBox();
                 RefreshSupplierGrid();
+                ClearFields();
             }
         }
 
@@ -166,9 +166,9 @@ namespace InventoryManagementSystem.Forms
                 dbcontext.SaveChanges();
 
                 MessageBox.Show("Supplier updated successfully.");
-                ClearFields();
                 LoadSuppliersIntoComboBox();
                 RefreshSupplierGrid();
+                ClearFields();
             }
             else
             {
