@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryManagementSystem.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,46 @@ namespace InventoryManagementSystem
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void warehousesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WarehouseForm warehouseForm = new WarehouseForm();
+            DialogResult result = warehouseForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }
+        }
+
+        private void itemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemsForm itemsForm = new ItemsForm();
+            DialogResult result = itemsForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }
+        }
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplierForm = new SupplierForm();
+            DialogResult result = supplierForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }    
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerForm customerForm = new CustomerForm();
+            DialogResult result = customerForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }
         }
     }
 }
