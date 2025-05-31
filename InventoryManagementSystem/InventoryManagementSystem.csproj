@@ -165,6 +165,12 @@
     <Compile Include="Forms\SupplierForm.Designer.cs">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SupplyOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplyOrderForm.Designer.cs">
+      <DependentUpon>SupplyOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WarehouseForm.cs">
       <SubType>Form</SubType>
     </Compile>

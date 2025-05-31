@@ -57,5 +57,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void supplyOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupplyOrderForm supplyOrderForm = new SupplyOrderForm();
+            DialogResult result = supplyOrderForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
     }
 }
