@@ -37,5 +37,25 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplierForm = new SupplierForm();
+            DialogResult result = supplierForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }    
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerForm customerForm = new CustomerForm();
+            DialogResult result = customerForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+            }
+        }
     }
 }
