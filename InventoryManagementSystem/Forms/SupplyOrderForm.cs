@@ -13,7 +13,7 @@ namespace InventoryManagementSystem.Forms
 {
     public partial class SupplyOrderForm: Form
     {
-        WarehouseDbContext dbContext = new WarehouseDbContext();
+        private readonly WarehouseDbContext dbContext = new WarehouseDbContext();
 
         public SupplyOrderForm()
         {

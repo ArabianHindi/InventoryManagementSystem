@@ -77,5 +77,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void transferItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransferForm transferForm = new TransferForm();
+            DialogResult result = transferForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
     }
 }

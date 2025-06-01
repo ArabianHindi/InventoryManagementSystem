@@ -56,7 +56,7 @@
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,7 +106,7 @@
             this.dismissOrdersToolStripMenuItem,
             this.transferItemsToolStripMenuItem});
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
-            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
             this.transactionsToolStripMenuItem.Text = "Transactions";
             // 
             // supplyOrdersToolStripMenuItem
@@ -128,6 +128,7 @@
             this.transferItemsToolStripMenuItem.Name = "transferItemsToolStripMenuItem";
             this.transferItemsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.transferItemsToolStripMenuItem.Text = "Transfer Items";
+            this.transferItemsToolStripMenuItem.Click += new System.EventHandler(this.transferItemsToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
