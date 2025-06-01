@@ -121,6 +121,7 @@
             this.dismissOrdersToolStripMenuItem.Name = "dismissOrdersToolStripMenuItem";
             this.dismissOrdersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dismissOrdersToolStripMenuItem.Text = "Dismiss Orders";
+            this.dismissOrdersToolStripMenuItem.Click += new System.EventHandler(this.dismissOrdersToolStripMenuItem_Click);
             // 
             // transferItemsToolStripMenuItem
             // 

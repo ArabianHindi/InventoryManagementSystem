@@ -67,5 +67,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void dismissOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DismissOrderForm dismissOrderForm = new DismissOrderForm();
+            DialogResult result = dismissOrderForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
     }
 }

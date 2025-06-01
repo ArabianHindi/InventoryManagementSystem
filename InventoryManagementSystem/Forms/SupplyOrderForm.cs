@@ -62,21 +62,31 @@ namespace InventoryManagementSystem.Forms
                 return;
             }
 
-            DateTime productionDate = dateTimePicker2.Value.Date;
-            DateTime expiryDate = dateTimePicker3.Value.Date;
+            //DateTime productionDate = dateTimePicker2.Value.Date;
+            //DateTime expiryDate = dateTimePicker3.Value.Date;
 
-            if (productionDate >= expiryDate)
+            //if (productionDate >= expiryDate)
+            //{
+            //    MessageBox.Show("Production date must be before the expiry date.");
+            //    return;
+            //}
+
+            DateTime productionDate = dateTimePicker2.Value.Date;
+            DateTime? expiryDate = checkBox1.Checked ? (DateTime?)null : dateTimePicker3.Value.Date;
+
+            if (!checkBox1.Checked && productionDate >= expiryDate)
             {
                 MessageBox.Show("Production date must be before the expiry date.");
                 return;
             }
+
 
             dataGridView1.Rows.Add(
                 item.ItemId,
                 item.ItemName,
                 quantity,
                 productionDate.ToString("MM/dd/yyyy"),
-                expiryDate.ToString("MM/dd/yyyy")
+                expiryDate?.ToString("MM/dd/yyyy") ?? "N/A"
             );
         }
 
@@ -103,13 +113,15 @@ namespace InventoryManagementSystem.Forms
                 return;
             }
 
+            int warehouseId = (int)comboBox1.SelectedValue;
+            int supplierId = (int)comboBox2.SelectedValue;
 
             var order = new SupplyOrder
             {
-                OrderNumber = textBox1.Text.Trim(),
+                OrderNumber = orderNumber,
                 OrderDate = dateTimePicker1.Value.Date,
-                WarehouseId = (int)comboBox1.SelectedValue,
-                SupplierId = (int)comboBox2.SelectedValue,
+                WarehouseId = warehouseId,
+                SupplierId = supplierId,
                 SupplyOrderItems = new List<SupplyOrderItem>()
             };
 
@@ -120,7 +132,9 @@ namespace InventoryManagementSystem.Forms
                 var itemId = Convert.ToInt32(row.Cells["ItemId"].Value);
                 var quantity = Convert.ToDecimal(row.Cells["Quantity"].Value);
                 var productionDate = DateTime.Parse(row.Cells["ProductionDate"].Value.ToString());
-                var expiryDate = DateTime.Parse(row.Cells["ExpiryDate"].Value.ToString());
+                //var expiryDate = DateTime.Parse(row.Cells["ExpiryDate"].Value.ToString());
+                string expiryString = row.Cells["ExpiryDate"].Value.ToString();
+                DateTime? expiryDate = expiryString == "N/A" ? (DateTime?)null : DateTime.Parse(expiryString);
 
                 var orderItem = new SupplyOrderItem
                 {
@@ -131,6 +145,33 @@ namespace InventoryManagementSystem.Forms
                 };
 
                 order.SupplyOrderItems.Add(orderItem);
+
+                var existingInventory = dbContext.WarehouseInventories.FirstOrDefault(inv =>
+                     inv.WarehouseId == warehouseId &&
+                     inv.ItemId == itemId &&
+                     inv.SupplierId == supplierId &&
+                     inv.ProductionDate ==  productionDate &&
+                     inv.ExpiryDate == expiryDate
+                );
+
+                if (existingInventory != null)
+                {
+                    existingInventory.CurrentQuantity += quantity;
+                    existingInventory.LastUpdated = DateTime.Now;
+                }
+                else
+                {
+                    dbContext.WarehouseInventories.Add(new WarehouseInventory
+                    {
+                        WarehouseId = warehouseId,
+                        ItemId = itemId,
+                        SupplierId = supplierId,
+                        CurrentQuantity = quantity,
+                        ProductionDate = productionDate,
+                        ExpiryDate = expiryDate,
+                        LastUpdated = DateTime.Now
+                    });
+                }
 
             }
 
@@ -157,6 +198,11 @@ namespace InventoryManagementSystem.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             ClearForm();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePicker3.Enabled = !checkBox1.Checked;
         }
     }
 }
