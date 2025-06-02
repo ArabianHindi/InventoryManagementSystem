@@ -113,11 +113,12 @@ namespace InventoryManagementSystem.Forms
             }
             if (!ValidateInputs()) return;
 
-            bool hasChanges =
-                textBox1.Text != _itemCopy.ItemCode ||
-                textBox2.Text != _itemCopy.ItemName;
+            bool noChanges =
+            textBox1.Text == _itemCopy.ItemCode &&
+            textBox2.Text == _itemCopy.ItemName &&
+            comboBox1.SelectedItem?.ToString() == _itemCopy.UnitsOfMeasurement;
 
-            if (hasChanges)
+            if (noChanges)
             {
                 MessageBox.Show("No changes detected.");
                 return;
