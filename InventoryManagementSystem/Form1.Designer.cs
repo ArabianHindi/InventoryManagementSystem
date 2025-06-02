@@ -168,6 +168,7 @@
             this.oldItemsToolStripMenuItem.Name = "oldItemsToolStripMenuItem";
             this.oldItemsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.oldItemsToolStripMenuItem.Text = "Old Items";
+            this.oldItemsToolStripMenuItem.Click += new System.EventHandler(this.oldItemsToolStripMenuItem_Click);
             // 
             // expiringItemsToolStripMenuItem
             // 

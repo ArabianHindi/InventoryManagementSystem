@@ -117,5 +117,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void oldItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockAgingReportForm stockAgingReportForm = new StockAgingReportForm();
+            DialogResult result = stockAgingReportForm.ShowDialog();
+
+            if (result != DialogResult.OK)
+            {
+            }
+        }
     }
 }

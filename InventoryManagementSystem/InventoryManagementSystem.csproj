@@ -177,6 +177,12 @@
     <Compile Include="Forms\ItemsForm.Designer.cs">
       <DependentUpon>ItemsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StockAgingReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockAgingReportForm.Designer.cs">
+      <DependentUpon>StockAgingReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemsForm.resx">
       <DependentUpon>ItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockAgingReportForm.resx">
+      <DependentUpon>StockAgingReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
