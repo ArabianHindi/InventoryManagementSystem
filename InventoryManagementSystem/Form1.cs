@@ -57,5 +57,35 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void supplyOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SupplyOrderForm supplyOrderForm = new SupplyOrderForm();
+            DialogResult result = supplyOrderForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
+
+        private void dismissOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DismissOrderForm dismissOrderForm = new DismissOrderForm();
+            DialogResult result = dismissOrderForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
+
+        private void transferItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransferForm transferForm = new TransferForm();
+            DialogResult result = transferForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
     }
 }
