@@ -133,20 +133,20 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 347);
+            this.comboBox1.Location = new System.Drawing.Point(27, 329);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 24);
+            this.comboBox1.Size = new System.Drawing.Size(179, 24);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 350);
+            this.label4.Location = new System.Drawing.Point(24, 297);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
+            this.label4.Size = new System.Drawing.Size(180, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Warehouse Names";
+            this.label4.Text = "Select Warehouse to Update";
             // 
             // WarehouseForm
             // 
