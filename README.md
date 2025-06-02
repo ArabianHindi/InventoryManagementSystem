@@ -1,170 +1,152 @@
 # Inventory Management System
 
-This is a Windows Forms Inventory Management System built using .NET Framework 4.8 and Entity Framework Core 3.1 (Code First). The system supports functionalities such as managing warehouses, items, suppliers, customers, supply orders, disbursement orders, transfer orders, and various reports.
-
-## Project Structure
-
-The project contains the following major components:
-
-- **Forms/**: UI forms for data entry and reporting.
-- **Models/**: Entity Framework models representing the database schema.
-- **Migrations/**: Code-first migration files.
-- **WarehouseDbContext.cs**: Database context managing the entity sets and relationships.
+This is a Windows Forms Inventory Management System built using .NET Framework 4.8 and Entity Framework Core 3.1 (Code First). The system supports functionalities such as managing warehouses, items, suppliers, customers, supply orders, disbursement orders, transfer orders, and generating reports.
 
 ---
 
-## Models Overview
+## 📁 Project Structure
+
+- **Forms/** – Windows Forms for data entry and reporting.
+- **Models/** – Entity Framework entity classes representing database tables.
+- **Migrations/** – Code-first EF Core migrations.
+- **WarehouseDbContext.cs** – EF Core DbContext with model configurations.
+- **App.config** – Configuration settings.
+- **Program.cs** – Main entry point.
+
+---
+
+## 🧾 Forms Overview
+
+### `Form1.cs` – Main Menu
+
+This is the main navigation form, structured as a **MenuStrip** with three primary categories:
+
+#### 1. **Masters**
+Used to manage and create core entities:
+- `WarehouseForm.cs` – Create/edit warehouses.
+- `ItemsForm.cs` – Create/edit items.
+- `SupplierForm.cs` – Create/edit suppliers.
+- `CustomerForm.cs` – Create/edit customers.
+
+#### 2. **Transactions**
+Used to record item movements in the system:
+- `SupplyOrderForm.cs` – Insert items into warehouse (from suppliers).
+- `DismissOrderForm.cs` – Remove items from warehouse (to customers).
+- `TransferForm.cs` – Transfer items between warehouses.
+
+#### 3. **Reports**
+Used to generate inventory and logistics reports:
+- `WarehouseReportForm.cs` – Shows data and stock across all warehouses.
+- `ItemReportForm.cs` – Shows detailed information about a specific item.
+- `ItemMovementReportForm.cs` – Shows item flow (incoming/outgoing).
+- `StockAgingReportForm.cs` – Displays aging report of stock batches.
+- `ExpiringItemsReportForm.cs` – Highlights items nearing expiration.
+
+---
+
+## 📦 Models Overview
 
 ### `Item`
 Represents an inventory item.
 
-- `Id`
-- `Name`
-- `Description`
-- `Unit`
-- `Price`
-- Navigation: `SupplyOrderItems`, `DisbursementOrderItems`, `TransferOrderItems`, `WarehouseInventories`
+- `Id`, `Name`, `Description`, `Unit`, `Price`
+- Navigation: SupplyOrderItems, DisbursementOrderItems, TransferOrderItems, WarehouseInventories
 
 ---
 
 ### `Customer`
-Represents a customer receiving disbursed items.
+Represents a customer.
 
-- `Id`
-- `Name`
-- `Phone`
-- `Address`
-- Navigation: `DisbursementOrders`
+- `Id`, `Name`, `Phone`, `Address`
+- Navigation: DisbursementOrders
 
 ---
 
 ### `Supplier`
-Represents a supplier providing items.
+Represents a supplier.
 
-- `Id`
-- `Name`
-- `Phone`
-- `Address`
-- Navigation: `SupplyOrders`
+- `Id`, `Name`, `Phone`, `Address`
+- Navigation: SupplyOrders
 
 ---
 
 ### `Warehouse`
-Represents a warehouse storing items.
+Represents a storage location.
 
-- `Id`
-- `Name`
-- `Location`
-- Navigation: `SupplyOrders`, `DisbursementOrders`, `TransferOrdersFrom`, `TransferOrdersTo`, `WarehouseInventories`
+- `Id`, `Name`, `Location`
+- Navigation: SupplyOrders, DisbursementOrders, TransferOrdersFrom, TransferOrdersTo, WarehouseInventories
 
 ---
 
 ### `SupplyOrder`
-Represents a supply order made to a supplier.
+Represents a supply transaction from a supplier.
 
-- `Id`
-- `Date`
-- `SupplierId`
-- `WarehouseId`
-- Navigation: `Supplier`, `Warehouse`, `SupplyOrderItems`
+- `Id`, `Date`, `SupplierId`, `WarehouseId`
+- Navigation: Supplier, Warehouse, SupplyOrderItems
 
 ---
 
 ### `SupplyOrderItem`
-Represents an item in a supply order.
+Represents a line item in a supply order.
 
-- `Id`
-- `SupplyOrderId`
-- `ItemId`
-- `Quantity`
-- `ProductionDate`
-- `ExpiryDate`
-- Navigation: `SupplyOrder`, `Item`
+- `Id`, `SupplyOrderId`, `ItemId`, `Quantity`, `ProductionDate`, `ExpiryDate`
 
 ---
 
 ### `DisbursementOrder`
 Represents an order to disburse items to a customer.
 
-- `Id`
-- `Date`
-- `CustomerId`
-- `WarehouseId`
-- Navigation: `Customer`, `Warehouse`, `DisbursementOrderItems`
+- `Id`, `Date`, `CustomerId`, `WarehouseId`
+- Navigation: Customer, Warehouse, DisbursementOrderItems
 
 ---
 
 ### `DisbursementOrderItem`
-Represents an item in a disbursement order.
+Represents a line item in a disbursement order.
 
-- `Id`
-- `DisbursementOrderId`
-- `ItemId`
-- `Quantity`
-- Navigation: `DisbursementOrder`, `Item`
+- `Id`, `DisbursementOrderId`, `ItemId`, `Quantity`
 
 ---
 
 ### `TransferOrder`
-Represents a transfer of items between warehouses.
+Represents the transfer of items between warehouses.
 
-- `Id`
-- `Date`
-- `FromWarehouseId`
-- `ToWarehouseId`
-- Navigation: `FromWarehouse`, `ToWarehouse`, `TransferOrderItems`
+- `Id`, `Date`, `FromWarehouseId`, `ToWarehouseId`
+- Navigation: FromWarehouse, ToWarehouse, TransferOrderItems
 
 ---
 
 ### `TransferOrderItem`
-Represents an item in a transfer order.
+Represents a line item in a transfer order.
 
-- `Id`
-- `TransferOrderId`
-- `ItemId`
-- `Quantity`
-- Navigation: `TransferOrder`, `Item`
+- `Id`, `TransferOrderId`, `ItemId`, `Quantity`
 
 ---
 
 ### `WarehouseInventory`
-Represents the quantity of an item in a specific warehouse.
+Tracks item quantities in warehouses.
 
-- `Id`
-- `WarehouseId`
-- `ItemId`
-- `Quantity`
-- `ProductionDate`
-- `ExpiryDate`
-- Navigation: `Warehouse`, `Item`
+- `Id`, `WarehouseId`, `ItemId`, `Quantity`, `ProductionDate`, `ExpiryDate`
 
 ---
 
-## Database Context
+## 🧠 Database Context
 
-### `WarehouseDbContext`
-Manages all the DbSets for the models above and configures relationships using Fluent API where needed.
+### `WarehouseDbContext.cs`
+Entity Framework Core context managing all model `DbSet`s and configurations.
 
 ---
 
-## Getting Started
-
-To run the project:
+## ▶️ Getting Started
 
 1. Open the solution in Visual Studio.
-2. Ensure Entity Framework Core 3.1 is installed.
-3. Run the application to interact with the forms and manage inventory data.
+2. Make sure EF Core 3.1 is installed.
+3. Run the application to manage inventory through forms and track all item flows.
 
 ---
 
-## Notes
+## 📌 Notes
 
-- Designed for educational and demonstration purposes.
-- CRUD operations and basic validations are handled through Windows Forms.
-- Uses Code First Migrations for database setup and updates.
-
----
-
-## License
-
-This project is open source and available under the MIT License.
+- Uses Code-First approach with EF Core.
+- Designed with a modular and maintainable structure.
+- Focuses on core inventory management functionality using local DB.
