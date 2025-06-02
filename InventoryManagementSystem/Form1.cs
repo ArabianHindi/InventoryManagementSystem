@@ -87,5 +87,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void warehouseReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WarehouseReportForm warehouseReportForm = new WarehouseReportForm();
+            DialogResult result = warehouseReportForm.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+            }
+        }
     }
 }

@@ -189,6 +189,12 @@
     <Compile Include="Forms\WarehouseForm.Designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WarehouseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WarehouseReportForm.Designer.cs">
+      <DependentUpon>WarehouseReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20250529160844_InitialCreate.cs" />
     <Compile Include="Migrations\20250529160844_InitialCreate.Designer.cs">
       <DependentUpon>20250529160844_InitialCreate.cs</DependentUpon>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WarehouseForm.resx">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WarehouseReportForm.resx">
+      <DependentUpon>WarehouseReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
