@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -45,7 +45,7 @@ namespace InventoryManagementSystem
 
             if (result == DialogResult.OK)
             {
-            }    
+            }
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace InventoryManagementSystem
             SupplyOrderForm supplyOrderForm = new SupplyOrderForm();
             DialogResult result = supplyOrderForm.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
             }
         }
@@ -73,7 +73,7 @@ namespace InventoryManagementSystem
             DismissOrderForm dismissOrderForm = new DismissOrderForm();
             DialogResult result = dismissOrderForm.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
             }
         }
@@ -83,7 +83,7 @@ namespace InventoryManagementSystem
             TransferForm transferForm = new TransferForm();
             DialogResult result = transferForm.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
             }
         }
@@ -93,7 +93,7 @@ namespace InventoryManagementSystem
             WarehouseReportForm warehouseReportForm = new WarehouseReportForm();
             DialogResult result = warehouseReportForm.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
             }
         }
@@ -103,7 +103,17 @@ namespace InventoryManagementSystem
             ItemReportForm itemReportForm = new ItemReportForm();
             DialogResult result = itemReportForm.ShowDialog();
 
-            if(result != DialogResult.OK)
+            if (result != DialogResult.OK)
+            {
+            }
+        }
+
+        private void movementReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemMovementReportForm itemMovementReportForm = new ItemMovementReportForm();
+            DialogResult result = itemMovementReportForm.ShowDialog();
+
+            if (result != DialogResult.OK)
             {
             }
         }

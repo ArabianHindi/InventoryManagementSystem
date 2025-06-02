@@ -27,7 +27,7 @@ namespace InventoryManagementSystem.Forms
             checkedListBox1.DisplayMember = "WarehouseName";
             checkedListBox1.ValueMember = "WarehouseId";
 
-            dateTimePicker1.Value = DateTime.Today.AddMonths(-1);
+            dateTimePicker1.Value = DateTime.Today;
             dateTimePicker2.Value = DateTime.Today;
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -42,7 +42,7 @@ namespace InventoryManagementSystem.Forms
 
             if (selectedWarehouseIds.Count == 0)
             {
-                MessageBox.Show("Please select at least one warehouse.", "Validation Error");
+                MessageBox.Show("Please select at least one warehouse.");
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace InventoryManagementSystem.Forms
 
             if (startDate > endDate)
             {
-                MessageBox.Show("Start date cannot be greater than end date.", "Validation Error");
+                MessageBox.Show("Start date cannot be greater than end date.");
                 return;
             }
 
