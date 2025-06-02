@@ -175,6 +175,7 @@
             this.expiringItemsToolStripMenuItem.Name = "expiringItemsToolStripMenuItem";
             this.expiringItemsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.expiringItemsToolStripMenuItem.Text = "Expiring Items";
+            this.expiringItemsToolStripMenuItem.Click += new System.EventHandler(this.expiringItemsToolStripMenuItem_Click);
             // 
             // Form1
             // 

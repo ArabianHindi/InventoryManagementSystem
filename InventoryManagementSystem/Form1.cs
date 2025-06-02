@@ -127,5 +127,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void expiringItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExpiringItemsReportForm expiringItemsReportForm = new ExpiringItemsReportForm();
+            DialogResult result = expiringItemsReportForm.ShowDialog();
+
+            if (result != DialogResult.OK)
+            {
+            }
+        }
     }
 }
