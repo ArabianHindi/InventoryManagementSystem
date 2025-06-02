@@ -154,6 +154,7 @@
             this.itemReportToolStripMenuItem.Name = "itemReportToolStripMenuItem";
             this.itemReportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.itemReportToolStripMenuItem.Text = "Item Report";
+            this.itemReportToolStripMenuItem.Click += new System.EventHandler(this.itemReportToolStripMenuItem_Click);
             // 
             // movementReportToolStripMenuItem
             // 

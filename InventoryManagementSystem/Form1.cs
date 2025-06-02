@@ -97,5 +97,15 @@ namespace InventoryManagementSystem
             {
             }
         }
+
+        private void itemReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemReportForm itemReportForm = new ItemReportForm();
+            DialogResult result = itemReportForm.ShowDialog();
+
+            if(result != DialogResult.OK)
+            {
+            }
+        }
     }
 }

@@ -159,6 +159,12 @@
     <Compile Include="Forms\DismissOrderForm.Designer.cs">
       <DependentUpon>DismissOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ItemReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemReportForm.Designer.cs">
+      <DependentUpon>ItemReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DismissOrderForm.resx">
       <DependentUpon>DismissOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemReportForm.resx">
+      <DependentUpon>ItemReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemsForm.resx">
       <DependentUpon>ItemsForm.cs</DependentUpon>
