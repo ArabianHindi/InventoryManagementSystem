@@ -10,7 +10,7 @@ namespace InventoryManagementSystem
 {
     class WarehouseDbContext : DbContext
     {
-        private const string ConnectionString = @"Server=BluRay\MSSQLSERVER01;Database=WarehouseManagementDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+        private const string ConnectionString = @"Server=.;Database=WarehouseInventoryDB;Trusted_Connection=True;MultipleActiveResultSets=true";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
